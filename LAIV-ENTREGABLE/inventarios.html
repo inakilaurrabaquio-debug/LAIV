@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventarios | Grupo LAIV</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="js/app.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/inventarios.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+    <a href="index.html" class="brand">LAIV<span>.</span></a>
+    <nav class="navigation">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="historia.html" class="nav-link">Nosotros</a>
+        <a href="movimientos.html" class="nav-link">Movimientos</a>
+        <a href="inventarios.html" class="nav-link active">Inventarios</a>
+        <a href="reportes.html" class="nav-link">Reportes</a>
+        <a href="login.html" class="nav-cta">Acceder a LAIV</a>
+    </nav>
+</header>
+
+<main>
+    <section class="page-hero">
+        <div class="section-container">
+            <span class="eyebrow">Control operativo</span>
+            <h1>Inventarios bajo control.</h1>
+            <p>
+                Registra tus productos, consulta las existencias y conoce
+                el valor estimado de tu inventario desde un solo lugar.
+            </p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-container two-columns">
+            <div>
+                <span class="eyebrow">Organización y seguimiento</span>
+                <h2>Conoce lo que tiene tu negocio.</h2>
+                <p>
+                    Mantener un registro organizado de los productos permite
+                    consultar cantidades disponibles, identificar niveles
+                    mínimos y estimar el valor económico de las existencias.
+                </p>
+                <p>
+                    LAIV reúne esta información para facilitar el seguimiento
+                    y apoyar una mejor toma de decisiones.
+                </p>
+            </div>
+            <img
+                class="section-image"
+                src="assets/images/inventarios-stock.jpg"
+                alt="Almacén organizado con productos en estanterías"
+            >
+        </div>
+    </section>
+
+    <section class="soft-section">
+        <div class="section-container">
+            <div class="section-heading">
+                <span class="eyebrow">Administración de productos</span>
+                <h2>Registrar un producto</h2>
+                <p>Ingresa la información del producto que deseas controlar.</p>
+            </div>
+
+            <form id="inventory-form" class="data-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="product-name">Nombre del producto</label>
+                        <input type="text" id="product-name" required
+                               placeholder="Ej. Producto A">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-category">Categoría</label>
+                        <input type="text" id="product-category" required
+                               placeholder="Ej. Materia prima">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-unit">Unidad</label>
+                        <select id="product-unit" required>
+                            <option value="Piezas">Piezas</option>
+                            <option value="Kilogramos">Kilogramos</option>
+                            <option value="Litros">Litros</option>
+                            <option value="Cajas">Cajas</option>
+                            <option value="Paquetes">Paquetes</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-quantity">Cantidad disponible</label>
+                        <input type="number" id="product-quantity" min="0"
+                               step="0.01" required placeholder="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-cost">Costo unitario (MXN)</label>
+                        <input type="number" id="product-cost" min="0"
+                               step="0.01" required placeholder="0.00">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="product-minimum">Existencia mínima</label>
+                        <input type="number" id="product-minimum" min="0"
+                               step="0.01" required placeholder="0">
+                    </div>
+                </div>
+
+                <button type="submit" class="button-primary">
+                    Registrar producto
+                </button>
+
+                <p id="inventory-message" class="form-message"></p>
+            </form>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-container">
+            <div class="section-heading">
+                <span class="eyebrow">Resumen del inventario</span>
+                <h2>Estado de tus existencias</h2>
+                <p>Indicadores calculados a partir de los productos registrados.</p>
+            </div>
+
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <span>Productos registrados</span>
+                    <strong id="product-count">0</strong>
+                </article>
+
+                <article class="stat-card">
+                    <span>Unidades disponibles</span>
+                    <strong id="total-units">0</strong>
+                </article>
+
+                <article class="stat-card">
+                    <span>Valor del inventario</span>
+                    <strong id="inventory-value">$0.00</strong>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="soft-section">
+        <div class="section-container">
+            <div class="section-heading">
+                <span class="eyebrow">Registro de existencias</span>
+                <h2>Productos registrados</h2>
+            </div>
+
+            <div class="table-container">
+                <table class="data-table" id="inventory-table">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Categoría</th>
+                            <th>Unidad</th>
+                            <th>Existencias</th>
+                            <th>Costo unitario</th>
+                            <th>Valor total</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Los productos se generan desde JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="demo-note">
+                Proyecto académico: los datos ingresados son demostrativos.
+                El inventario se administra de forma independiente de los
+                movimientos financieros.
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div>
+            <div class="brand">LAIV<span>.</span></div>
+            <p>Inteligencia financiera para empresas.</p>
+        </div>
+        <div>
+            <p>Grupo LAIV · Proyecto académico</p>
+            <p>Gestión, análisis y control financiero.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

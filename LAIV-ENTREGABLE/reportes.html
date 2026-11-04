@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes financieros | Grupo LAIV</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/reportes.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+    <a href="index.html" class="brand">LAIV<span>.</span></a>
+    <nav class="navigation">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="historia.html" class="nav-link">Nosotros</a>
+        <a href="movimientos.html" class="nav-link">Movimientos</a>
+        <a href="inventarios.html" class="nav-link">Inventarios</a>
+        <a href="reportes.html" class="nav-link active">Reportes</a>
+        <a href="login.html" class="nav-cta">Acceder a LAIV</a>
+    </nav>
+</header>
+
+<main>
+    <section class="page-hero">
+        <div class="section-container">
+            <span class="eyebrow">Análisis financiero</span>
+            <h1>Transforma tus datos en decisiones.</h1>
+            <p>
+                Consulta los principales indicadores de tu negocio,
+                identifica resultados y obtén una visión general
+                de su situación financiera.
+            </p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-container two-columns">
+            <div>
+                <span class="eyebrow">Información para decidir</span>
+                <h2>Una perspectiva financiera integral.</h2>
+                <p>
+                    Los reportes financieros permiten interpretar los
+                    movimientos económicos de una empresa y reconocer
+                    oportunidades de mejora.
+                </p>
+                <p>
+                    LAIV concentra información sobre ingresos, gastos,
+                    utilidad e inventarios para facilitar su consulta
+                    y análisis.
+                </p>
+            </div>
+
+            <img
+                class="section-image"
+                src="assets/images/reportes-analisis.jpg"
+                alt="Análisis de información financiera en una computadora"
+            >
+        </div>
+    </section>
+
+    <section class="soft-section">
+        <div class="section-container">
+            <div class="section-heading">
+                <span class="eyebrow">Indicadores principales</span>
+                <h2>Resumen financiero</h2>
+                <p>
+                    Resultados calculados con base en los movimientos
+                    registrados en el sistema.
+                </p>
+            </div>
+
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <span>Ingresos totales</span>
+                    <strong id="report-income">$0.00</strong>
+                </article>
+
+                <article class="stat-card">
+                    <span>Gastos totales</span>
+                    <strong id="report-expenses">$0.00</strong>
+                </article>
+
+                <article class="stat-card">
+                    <span>Utilidad</span>
+                    <strong id="report-profit">$0.00</strong>
+                </article>
+
+                <article class="stat-card">
+                    <span>Margen de utilidad</span>
+                    <strong id="report-margin">0%</strong>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-container">
+            <div class="section-heading">
+                <span class="eyebrow">Comportamiento financiero</span>
+                <h2>Ingresos y gastos por mes</h2>
+                <p>
+                    Visualiza el comportamiento de los movimientos
+                    financieros registrados.
+                </p>
+            </div>
+
+            <div class="chart-card">
+                <canvas id="monthly-chart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <section class="soft-section">
+        <div class="section-container">
+            <div class="section-heading">
+                <span class="eyebrow">Información general</span>
+                <h2>Concentrado de resultados</h2>
+            </div>
+
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Indicador</th>
+                            <th>Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Total de ingresos</td>
+                            <td id="summary-income">$0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Total de gastos</td>
+                            <td id="summary-expenses">$0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Utilidad neta estimada</td>
+                            <td id="summary-profit">$0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Productos registrados</td>
+                            <td id="summary-products">0</td>
+                        </tr>
+                        <tr>
+                            <td>Valor del inventario</td>
+                            <td id="summary-inventory">$0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Movimientos registrados</td>
+                            <td id="summary-movements">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-container">
+            <div class="section-heading">
+                <span class="eyebrow">Interpretación de resultados</span>
+                <h2>Análisis financiero</h2>
+            </div>
+
+            <div class="analysis-card">
+                <p id="financial-analysis">
+                    El análisis financiero aparecerá cuando se carguen
+                    los datos registrados en el sistema.
+                </p>
+            </div>
+
+            <p class="demo-note">
+                Proyecto académico: los resultados son demostrativos
+                y dependen de la información capturada. La utilidad
+                mostrada corresponde a ingresos menos gastos registrados;
+                no representa necesariamente una utilidad contable.
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div>
+            <div class="brand">LAIV<span>.</span></div>
+            <p>Inteligencia financiera para empresas.</p>
+        </div>
+        <div>
+            <p>Grupo LAIV · Proyecto académico</p>
+            <p>Gestión, análisis y control financiero.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,958 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* =================================
+   1. VARIABLES Y CONFIGURACIÓN
+================================= */
+
+:root {
+    --black: #171a18;
+    --green: #294c3b;
+    --green-light: #e9efe9;
+    --white: #ffffff;
+    --background: #f8f9f7;
+    --gray: #777e78;
+    --border: #e7e9e5;
+    --danger: #a84d4d;
+
+    --content-width: 1250px;
+    --page-width: 86%;
+    --section-space: clamp(55px, 7vw, 95px);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+    min-width: 320px;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.2;
+}
+
+h1, h2, h3, p, a, strong {
+    overflow-wrap: break-word;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+button {
+    font-family: inherit;
+}
+
+button, a, input, select, textarea {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* =================================
+   2. NAVEGACIÓN
+================================= */
+
+.site-header {
+    min-height: 82px;
+    padding: 14px max(5%, calc((100% - 1400px) / 2));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
+    font-family: 'Manrope', sans-serif;
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    white-space: nowrap;
+}
+
+.brand span {
+    color: var(--green);
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+}
+
+.nav-link {
+    color: #656b66;
+    font-size: 13px;
+    font-weight: 600;
+    transition: color .2s;
+    white-space: nowrap;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--green);
+}
+
+.nav-cta {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    padding: 12px 21px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background .2s;
+}
+
+.nav-cta:hover {
+    background: #1d382b;
+}
+
+/* =================================
+   3. CONTENIDO GENERAL
+================================= */
+
+.main-content {
+    width: 100%;
+    min-height: 75vh;
+}
+
+.page-container,
+.section-container {
+    width: var(--page-width);
+    max-width: var(--content-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 17px;
+}
+
+.section-heading {
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    font-size: clamp(26px, 3vw, 42px);
+    margin-bottom: 12px;
+}
+
+.section-heading p {
+    color: var(--gray);
+    max-width: 650px;
+}
+
+.content-section {
+    padding: var(--section-space) 0;
+}
+
+.soft-section {
+    background: var(--background);
+}
+
+/* =================================
+   4. PORTADA PRINCIPAL
+================================= */
+
+.hero {
+    min-height: clamp(480px, 48vw, 680px);
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(15, 25, 19, .85),
+            rgba(15, 25, 19, .25)
+        ),
+        url('https://pikwizard.com/wp-content/uploads/2025/05/business-team-collaborating-over-laptop-with-financial-analytics-overlay-in-modern-office.jpg');
+
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero-content {
+    width: var(--page-width);
+    max-width: var(--content-width);
+    margin: auto;
+}
+
+.hero-content h1 {
+    font-size: clamp(38px, 5.5vw, 76px);
+    max-width: 760px;
+    margin-bottom: 23px;
+    letter-spacing: -2px;
+}
+
+.hero-content p {
+    max-width: 550px;
+    color: #e4e8e4;
+    font-size: clamp(14px, 1.2vw, 17px);
+    margin-bottom: 32px;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.button-primary,
+.button-secondary {
+    display: inline-block;
+    padding: 14px 24px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    transition: .2s;
+    text-align: center;
+}
+
+.button-primary {
+    background: var(--green);
+    color: white;
+}
+
+.hero .button-primary {
+    background: white;
+    color: var(--black);
+}
+
+.button-primary:hover,
+.hero .button-primary:hover {
+    background: var(--green-light);
+    color: var(--green);
+}
+
+.button-secondary {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,.7);
+}
+
+.button-secondary:hover {
+    background: rgba(255,255,255,.12);
+}
+
+/* =================================
+   5. SECCIONES Y COLUMNAS
+================================= */
+
+.two-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(30px, 5vw, 65px);
+    align-items: center;
+}
+
+.section-image {
+    width: 100%;
+    height: clamp(250px, 30vw, 420px);
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.section-copy h2 {
+    font-size: clamp(27px, 3vw, 40px);
+    margin-bottom: 20px;
+}
+
+.section-copy p {
+    color: var(--gray);
+    margin-bottom: 18px;
+}
+
+.welcome-section {
+    margin-bottom: 35px;
+}
+
+.welcome-section h2 {
+    font-size: clamp(25px, 3vw, 32px);
+    margin-bottom: 10px;
+}
+
+.welcome-section p {
+    color: var(--gray);
+}
+
+/* =================================
+   6. TARJETAS
+================================= */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.feature-card {
+    min-width: 0;
+    padding: clamp(20px, 2.5vw, 30px);
+    border: 1px solid var(--border);
+    background: white;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.05);
+}
+
+.feature-card img {
+    width: 100%;
+    height: 190px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    object-fit: cover;
+}
+
+.feature-card-content {
+    width: 100%;
+}
+
+.feature-card h3 {
+    font-size: clamp(17px, 1.5vw, 21px);
+    margin: 15px 0 10px;
+}
+
+.feature-card p {
+    color: var(--gray);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.feature-card a {
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.feature-number {
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* =================================
+   7. PÁGINAS INTERNAS
+================================= */
+
+.page-hero {
+    padding: clamp(55px, 7vw, 85px) 0;
+    background: var(--background);
+}
+
+.page-hero h1 {
+    font-size: clamp(32px, 5vw, 58px);
+    margin-bottom: 15px;
+    max-width: 850px;
+}
+
+.page-hero p {
+    color: var(--gray);
+    max-width: 650px;
+}
+
+.section-container > .section-container {
+    width: 100%;
+}
+
+/* =================================
+   8. FORMULARIOS
+================================= */
+
+.form-container,
+.panel,
+.data-form {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: clamp(18px, 3vw, 30px);
+    margin-bottom: 25px;
+    min-width: 0;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+    min-width: 0;
+}
+
+.form-group label {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 13px;
+    background: white;
+    color: var(--black);
+    font-family: inherit;
+    font-size: 14px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--green);
+    outline-offset: 1px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.form-message {
+    color: var(--green);
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+button:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-danger {
+    border: none;
+    padding: 12px 19px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.btn-primary {
+    background: var(--green);
+    color: white;
+}
+
+.btn-secondary {
+    background: var(--green-light);
+    color: var(--green);
+}
+
+.btn-danger {
+    background: #f8eaea;
+    color: var(--danger);
+}
+
+/* =================================
+   9. INDICADORES FINANCIEROS
+================================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    min-width: 0;
+    padding: clamp(17px, 2.2vw, 26px);
+    background: var(--background);
+    border: 1px solid var(--border);
+}
+
+.stat-card span,
+.stat-card p {
+    display: block;
+    color: var(--gray);
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.stat-card strong,
+.stat-card h3 {
+    display: block;
+    font-size: clamp(19px, 2vw, 28px);
+    color: var(--green);
+    overflow-wrap: anywhere;
+}
+
+/* =================================
+   10. TABLAS
+================================= */
+
+.table-responsive,
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid var(--border);
+    background: white;
+    border-radius: 4px;
+}
+
+.table,
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.table th,
+.table td,
+.data-table th,
+.data-table td {
+    text-align: left;
+    padding: 15px 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.table th,
+.data-table th {
+    color: var(--gray);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    background: var(--background);
+}
+
+.table tr:last-child td,
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.badge-income,
+.badge-expense {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 3px;
+    font-size: 11px;
+}
+
+.badge-income {
+    color: var(--green);
+    background: var(--green-light);
+}
+
+.badge-expense {
+    color: var(--danger);
+    background: #f8eaea;
+}
+
+/* =================================
+   11. GRÁFICAS Y ANÁLISIS
+================================= */
+
+.chart-card,
+.analysis-card {
+    width: 100%;
+    min-width: 0;
+    padding: clamp(18px, 3vw, 30px);
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-bottom: 25px;
+}
+
+.chart-card {
+    position: relative;
+    height: 360px;
+}
+
+.chart-card canvas {
+    max-width: 100%;
+}
+
+.analysis-card p {
+    color: var(--gray);
+    line-height: 1.8;
+}
+
+.demo-note {
+    color: var(--gray);
+    font-size: 12px;
+    line-height: 1.7;
+    margin-top: 20px;
+}
+
+/* =================================
+   12. PIE DE PÁGINA
+================================= */
+
+.site-footer {
+    padding: 55px max(7%, calc((100% - 1400px) / 2));
+    background: var(--black);
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.site-footer p {
+    color: #b6beb8;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* =================================
+   13. TV Y MONITORES GRANDES
+================================= */
+
+@media (min-width: 1600px) {
+    :root {
+        --content-width: 1400px;
+        --page-width: 84%;
+    }
+
+    .hero-content h1 {
+        max-width: 900px;
+    }
+
+    .feature-card img {
+        height: 230px;
+    }
+}
+
+/* =================================
+   14. LAPTOP Y TABLET HORIZONTAL
+================================= */
+
+@media (max-width: 1100px) {
+    :root {
+        --page-width: 90%;
+    }
+
+    .site-header {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .navigation {
+        gap: 12px 18px;
+    }
+
+    .nav-link {
+        font-size: 12px;
+    }
+
+    .two-columns {
+        gap: 30px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =================================
+   15. TABLET VERTICAL
+================================= */
+
+@media (max-width: 850px) {
+    .site-header {
+        min-height: auto;
+        padding: 16px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .navigation {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 14px 20px;
+    }
+
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .section-image {
+        height: 330px;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero {
+        min-height: 490px;
+    }
+
+    .chart-card {
+        height: 320px;
+    }
+}
+
+/* =================================
+   16. CELULARES
+================================= */
+
+@media (max-width: 550px) {
+    :root {
+        --page-width: 90%;
+        --section-space: 55px;
+    }
+
+    .site-header {
+        padding: 14px 5%;
+    }
+
+    .brand {
+        font-size: 25px;
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: flex-start;
+        gap: 12px 16px;
+    }
+
+    .nav-link {
+        font-size: 12px;
+    }
+
+    .nav-cta {
+        padding: 10px 14px;
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 520px;
+        background-position: 60% center;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(36px, 10vw, 48px);
+        letter-spacing: -1.5px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .button-primary,
+    .button-secondary {
+        width: 100%;
+    }
+
+    .feature-grid,
+    .stats-grid,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        padding: 22px;
+    }
+
+    .feature-card img {
+        height: 190px;
+    }
+
+    .section-image {
+        height: 250px;
+    }
+
+    .page-hero {
+        padding: 50px 0;
+    }
+
+    .page-hero h1 {
+        font-size: 34px;
+    }
+
+    .content-section {
+        padding: 55px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 25px;
+    }
+
+    .chart-card {
+        height: 280px;
+        padding: 12px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .site-footer {
+        padding: 40px 5%;
+    }
+
+    .data-form,
+    .form-container,
+    .panel {
+        padding: 18px;
+    }
+}
+
+/* =================================
+   17. CELULARES MUY PEQUEÑOS
+================================= */
+
+@media (max-width: 360px) {
+    .navigation {
+        gap: 10px 12px;
+    }
+
+    .nav-link {
+        font-size: 11px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-card strong {
+        font-size: 19px;
+    }
+}
+
+/* =================================
+   18. ACCESIBILIDAD
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+    }
+}
+
+/* IMÁGENES LAIV */
+
+.laiv-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.hero-image {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.section-image {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.login-image {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 24px;
+}
+
+.image-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+@media (max-width: 850px) {
+    .hero-image {
+        height: 340px;
+    }
+
+    .section-image {
+        height: 260px;
+    }
+}
+
+@media (max-width: 550px) {
+    .hero-image {
+        height: 240px;
+    }
+
+    .section-image {
+        height: 210px;
+    }
+
+    .login-image {
+        height: 180px;
+    }
+}
