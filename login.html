@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso | Grupo LAIV</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/auth.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+    <a href="index.html" class="brand">LAIV<span>.</span></a>
+    <nav class="navigation">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="historia.html" class="nav-link">Nosotros</a>
+    </nav>
+</header>
+
+<main class="content-section">
+    <div class="section-container" style="max-width: 520px;">
+        <div class="section-heading">
+            <span class="eyebrow">Plataforma LAIV</span>
+            <h1 id="form-title">Iniciar sesión</h1>
+            <p id="form-description">
+                Ingresa tus datos para acceder a tu espacio financiero.
+            </p>
+        </div>
+
+        <form id="auth-form" class="data-form">
+            <div class="form-group" id="name-group" hidden>
+                <label for="name">Nombre completo</label>
+                <input type="text" id="name" placeholder="Tu nombre">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email"
+                       placeholder="nombre@empresa.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password"
+                       placeholder="Ingresa tu contraseña"
+                       minlength="6" required>
+            </div>
+
+            <button type="submit" class="button-primary" id="submit-button">
+                Iniciar sesión
+            </button>
+
+            <p id="auth-message" class="form-message"></p>
+        </form>
+
+        <p style="text-align:center; margin-top:22px;">
+            <span id="toggle-text">¿No tienes una cuenta?</span>
+            <button type="button" id="toggle-mode"
+                    class="nav-link"
+                    style="border:0; background:none; cursor:pointer;">
+                Crear cuenta
+            </button>
+        </p>
+
+        <p style="text-align:center; margin-top:20px;">
+            <a href="index.html">← Volver al inicio</a>
+        </p>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div>
+            <div class="brand">LAIV<span>.</span></div>
+            <p>Inteligencia financiera para empresas.</p>
+        </div>
+        <div>
+            <p>Grupo LAIV · Proyecto académico</p>
+            <p>Gestión, análisis y control financiero.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
