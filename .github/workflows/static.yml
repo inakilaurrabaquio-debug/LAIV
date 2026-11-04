@@ -27,14 +27,27 @@ jobs:
       - name: Descargar repositorio
         uses: actions/checkout@v4
 
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
+
+      - name: Compilar LAIV
+        run: npm run build
 
       - name: Preparar sitio
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ./out
 
       - name: Publicar LAIV
         id: deployment
         uses: actions/deploy-pages@v4
+
